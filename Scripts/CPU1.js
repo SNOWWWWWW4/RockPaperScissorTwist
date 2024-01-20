@@ -10,10 +10,12 @@ const spock = document.getElementById('spock');
 let userChoi;
 let compChoi;
 
+
 function GetUserChoice(){
 	rock.addEventListener('click', () => {
 		userChoi = "rock";
-		rock.classList.add('shake');
+		rock.classList.Add('shake');
+		
 	});
 	
 	paper.addEventListener('click', () => {
@@ -39,7 +41,10 @@ function GetUserChoice(){
 		spock.classList.add('shake');
 		
 	});
+	console.log(`User choose ${userChoi}`);
 }
+
+
 
 
 const both = document.getElementById('both');
@@ -56,7 +61,7 @@ async function GetCPUChoice() {
 	const promise = await fetch("https://rpslsapi.azurewebsites.net/RPSLS");
 	const data = await promise.text();
 	compChoi = data.toLowerCase();
-	return compChoi;
+	console.log (`Computer choose ${compChoi}`);
 }
 
 
@@ -220,7 +225,7 @@ function OneAndDoneCPU (userChoi) {
 	}
 }
 
-export {GetUserChoice, GetCPUChoice, OneAndDoneCPU};
+export {GetUserChoice,GetCPUChoice, OneAndDoneCPU};
 
 
 
