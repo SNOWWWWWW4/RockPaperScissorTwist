@@ -1,4 +1,4 @@
-import {GetUserChoice,GetCPUChoice, OneAndDoneCPU} from "./CPU1.js";
+import {GetCPUChoice, OneAndDoneCPU} from "./CPU1.js";
 
 const main = document.getElementById('main');
 const cpuGameDisplay = document.getElementById('cpuGameDisplay');
@@ -28,19 +28,17 @@ goBack.addEventListener('click', () => {
 
 });
 
-const play = document.getElementById('play');
-play.addEventListener('click', () => {
+// const play = document.getElementById('play');
+// play.addEventListener('click', () => {
 
-	rock.classList.remove('shake');
-	paper.classList.remove('shake');
-	scissors.classList.remove('shake');
-	lizard.classList.remove('shake');
-	spock.classList.remove('shake');
+// 	rock.classList.remove('shake');
+// 	paper.classList.remove('shake');
+// 	scissors.classList.remove('shake');
+// 	lizard.classList.remove('shake');
+// 	spock.classList.remove('shake');
 
-	GetCPUChoice();
-	GetCPUChoice();
-	OneAndDoneCPU();
-})
+// 	GetCPUChoice();
+// })
 
 // Styling
 // const choiceImg = document.getElementById('choiceImg')

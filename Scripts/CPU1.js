@@ -11,40 +11,48 @@ let userChoi;
 let compChoi;
 
 
-function GetUserChoice(){
-	rock.addEventListener('click', () => {
-		userChoi = "rock";
-		rock.classList.Add('shake');
-		
-	});
-	
-	paper.addEventListener('click', () => {
-		userChoi = "paper";
-		paper.classList.add('shake');
-		
-	});
-	
-	scissors.addEventListener('click', () => {
-		userChoi = "scissors";
-		scissors.classList.add('shake');
-		
-	});
-	
-	lizard.addEventListener('click', () => {
-		userChoi = "lizard";
-		lizard.classList.add('shake');
-		
-	});
-	
-	spock.addEventListener('click', () => {
-		userChoi = "spock";
-		spock.classList.add('shake');
-		
-	});
-	console.log(`User choose ${userChoi}`);
-}
+rock.addEventListener('click', async() => {
+	userChoi = "rock";
+	rock.classList.add('shake');
+	alert("rock");
+	await GetCPUChoice();
+	OneAndDoneCPU();
 
+	
+});
 
+paper.addEventListener('click', async() => {
+	userChoi = "paper";
+	paper.classList.add('shake');
+	await GetCPUChoice();
+	OneAndDoneCPU();
+	
+});
+
+scissors.addEventListener('click', async() => {
+	userChoi = "scissors";
+	scissors.classList.add('shake');
+	await GetCPUChoice();
+	OneAndDoneCPU();
+	
+});
+
+lizard.addEventListener('click', async() => {
+	userChoi = "lizard";
+	lizard.classList.add('shake');
+	await GetCPUChoice();
+	OneAndDoneCPU();
+	
+});
+
+spock.addEventListener('click', async() => {
+	userChoi = "spock";
+	spock.classList.add('shake');
+	await GetCPUChoice();
+	OneAndDoneCPU();
+	
+});
+console.log(`User choose ${userChoi}`);
 
 
 const both = document.getElementById('both');
@@ -53,8 +61,8 @@ const result = document.getElementById('result');
 const userScore = document.getElementById('userScore');
 const cpuScore = document.getElementById('cpuScore');
 
-const uPoint = 0;
-const cPoint = 0;
+let uPoint = 0;
+let cPoint = 0;
 
 
 async function GetCPUChoice() {
@@ -65,9 +73,7 @@ async function GetCPUChoice() {
 }
 
 
-function OneAndDoneCPU (userChoi) {
-	
-	GetCPUChoice();
+function OneAndDoneCPU () {
 
 	if (userChoi === compChoi) {
 		both.innerText = `User Choose: ${userChoi} \n CPU Choose: ${compChoi}`; 
@@ -225,7 +231,7 @@ function OneAndDoneCPU (userChoi) {
 	}
 }
 
-export {GetUserChoice,GetCPUChoice, OneAndDoneCPU};
+export {GetCPUChoice, OneAndDoneCPU};
 
 
 
